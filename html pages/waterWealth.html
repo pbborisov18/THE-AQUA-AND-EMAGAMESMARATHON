@@ -8,20 +8,65 @@
   
   <link rel="stylesheet" href="../css/waterWealth.css">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+
+
+  
 </head>
 
 <body>
-  <img src="../images/logos/2nd long white letters no bg.png" alt="Our 2nd logo">
-  <button>БЛОГ</button>
-  <button>ЗАЩИТЕНИ ВИДОВЕ</button>
-  <button id="current";>ВОДНО БОГАТСТВО</button>
-  <button>ИМАШ ИДЕЯ ЗА СТАТИЯ?</button>
-  <button>СЪЗДАТЕЛИ</button>
 
-  <h1>ВОДНО БОГАТСТВО НА БЪЛГАРИЯ</h1>
+ <img class="logo" src="../images/logos/2nd long white letters no bg.png" alt="Our 2nd logo">
+
+  <div class="buttons">
+    <a href="index.html"> <button>БЛОГ</button> </a> 
+  
+    <a href="protectedSpecies.html"> <button>ЗАЩИТЕНИ ВИДОВЕ</button> </a>
+  
+    <button id="current";>ВОДНО БОГАТСТВО</button>
+  
+    <a href="ideaForArticle.html"><button>ИМАШ ИДЕЯ ЗА СТАТИЯ?</button> </a>
+  
+    <a href="creators.html"> <button>СЪЗДАТЕЛИ</button> </a>
+  </div>
+
+
+  
+
+
+  <div class="bgSquare">
+    <h1>ВОДНО БОГАТСТВО НА БЪЛГАРИЯ</h1>
+    <div id="map">
+      <script>
+        var map = L.map('map').setView([42.65, 25], 7.5);
+
+        L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=N9yhLVbZWFwtLpQmcbuc',{
+          attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }).addTo(map);
+        
+        var marker = L.marker([42.5, 27.8]).addTo(map);
+
+       
+
+        marker.bindPopup("<b>ЧЕРНО МОРЕ</b><br>ТекстТекстТекст");
+
+        marker.on('mouseover',function(ev) {
+          ev.target.openPopup();
+        });
+        marker.on('mouseout', function (e) {
+            this.closePopup();
+        });
+      </script>
+    </div>
+  </div>
+
+  
+    
 
 </body>
 </html>
