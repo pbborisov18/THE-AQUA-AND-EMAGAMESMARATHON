@@ -75,8 +75,6 @@ button{
     padding-left: 8%;
 }*/
 
-
-
 .bgSquare{
     position: relative;
     text-align: center;
@@ -94,7 +92,7 @@ button{
     position:static;
     text-align: center;
     width: 85vw;
-    height: 80vh; 
+    height: 90%; 
     margin-left: 2.5%;
     border-radius: 50px;
 }
